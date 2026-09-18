@@ -1,15 +1,15 @@
 # Dra. Joyce Radis
 
-**Physician | Judicial Medical Expert | Emergency & Acute Care | AI-enabled Clinical and Medico-Legal Systems**
+**Physician | Court-Appointed Medical Expert | Emergency & Acute Care | AI-enabled Clinical and Medico-Legal Systems**
 
-Brazilian physician (CRM-ES 21188) working across clinical care and judicial medical expertise, with a focus on designing practical digital systems for high-friction healthcare and medico-legal workflows.
+Brazilian physician (CRM-ES 21188) working across clinical care and court-appointed medical expertise, with a focus on designing practical digital systems for high-friction healthcare and medico-legal workflows.
 
 My work sits at the intersection of **medicine, structured reasoning, workflow design and applied artificial intelligence**. I build tools that transform domain knowledge into usable systems: clinical documentation, emergency-care workflow support, medico-legal organization, evidence traceability and professional productivity.
 
 ## Focus
 
 - Clinical practice in urgent and emergency care
-- Judicial medical expertise and medico-legal reasoning
+- court-appointed medical expertise and medico-legal reasoning
 - Clinical documentation and workflow engineering
 - AI-assisted information extraction and structured reasoning
 - Healthtech product design and rapid prototyping
