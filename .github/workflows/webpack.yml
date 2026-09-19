@@ -1,46 +1,34 @@
-name: NodeJS with Webpack
-            - nome: Cache
-  utiliza: actions/cache@v5.1.0
-  com:
-    # Uma lista de arquivos, diretórios e padrões curinga para armazenar em cache e restaurar
-    caminho:
-    # Uma chave explícita para restaurar e salvar o cache
-    chave:
-    # Uma string ordenada de várias linhas listando as chaves correspondentes ao prefixo, que são usadas para restaurar o cache obsoleto caso não ocorra nenhuma ocorrência de cache para a chave. Observe que `cache-hit` retorna falso neste caso.
-    restaurar-chaves: # opcional
-    # O tamanho do bloco usado para dividir arquivos grandes durante o upload, em bytes
-    tamanho-do-pedaço-de-upload: # opcional
-    # Um valor booleano opcional que, quando ativado, permite que os executores do Windows salvem ou restaurem caches que podem ser restaurados ou salvos, respectivamente, em outras plataformas.
-    enableCrossOsArchive: # opcional, o padrão é falso
-    # Falhe o fluxo de trabalho se a entrada de cache não for encontrada
-    falha-em-cache-miss: # opcional, o padrão é falso
-    # Verifica se existe uma entrada de cache para a(s) entrada(s) fornecida(s) (chave, chaves-de-restauração) sem baixar o cache.
-    lookup-only: # opcional, o padrão é falso
-    # Execute a etapa pós-execução para salvar o cache mesmo que uma etapa anterior falhe
-    salvar-sempre: # opcional, o padrão é falso
+name: CI
+
 on:
   push:
-    branches: [ "main" ]
+    branches: [main]
   pull_request:
-    branches: [ "main" ]
+    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
+    timeout-minutes: 10
 
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
