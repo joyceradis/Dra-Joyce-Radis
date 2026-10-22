@@ -222,6 +222,7 @@ export const App: React.FC = () => {
                 </button>
               );
             })}
+            <a href="https://joyceradis.github.io/outubro-rosa/" target="_blank" rel="noopener noreferrer" className="text-[11px] font-semibold uppercase tracking-[0.1em] text-[#9a6479] hover:text-stone-900 dark:text-[#e1aec0] dark:hover:text-white transition-all whitespace-nowrap">Outubro Rosa ↗</a>
           </div>
 
           {/* Login / Auth Control Panel & Dark Mode Toggle */}
@@ -314,6 +315,8 @@ export const App: React.FC = () => {
                     {tab.label}
                   </button>
                 ))}
+                <a href="https://joyceradis.github.io/outubro-rosa/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-left text-sm font-semibold uppercase tracking-widest text-[#aa7385]">Outubro Rosa ↗</a>
+                <a href="https://joyceradis.github.io/saude-viagem-foz/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-left text-sm font-semibold uppercase tracking-widest text-stone-500 dark:text-stone-400">Saúde pré-viagem ↗</a>
               </div>
 
               <div className="pt-6 mt-6 border-t border-stone-100 dark:border-stone-900">
@@ -820,6 +823,8 @@ export const App: React.FC = () => {
             <span className="hover:text-stone-800 cursor-pointer" onClick={() => handleTabChange('booking')}>Pacientes (Agendar)</span>
             <span className="hover:text-stone-800 cursor-pointer" onClick={() => handleTabChange('lawyers')}>Advogados (Solicitar)</span>
             <span className="hover:text-stone-800 cursor-pointer" onClick={() => handleTabChange('cabinet')}>Área do Cliente</span>
+            <a href="https://joyceradis.github.io/outubro-rosa/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800">Outubro Rosa ↗</a>
+            <a href="https://joyceradis.github.io/saude-viagem-foz/" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800">Saúde pré-viagem ↗</a>
             <a href="https://www.linkedin.com/in/joyceradis" target="_blank" rel="noopener noreferrer" className="hover:text-stone-800 flex items-center gap-1">
               <Linkedin size={11} className="shrink-0" /> LinkedIn
             </a>
